@@ -4,7 +4,7 @@
 
 ## ⚠️ 声明
 
-**本项目完全由 [Xiaomi MiMo](https://github.com/Xiaomi/mimo) 生成**，功能代码参考自 [hs-qiqi-cv-plugin](https://gitee.com/kesally/hs-qiqi-cv-plugin)。
+**本项目完全由 [Xiaomi MiMo](https://aistudio.xiaomimimo.com/) 生成**，功能代码参考自 [hs-qiqi-cv-plugin](https://gitee.com/kesally/hs-qiqi-cv-plugin)。
 
 ## 功能
 

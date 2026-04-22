@@ -204,7 +204,7 @@ export async function handleMessage(ctx: NapCatPluginContext, event: OB11Message
         }
 
         // 检查命令前缀
-        const prefix = pluginState.config.commandPrefix || '#cmd';
+        const prefix = pluginState.config.commandPrefix ?? '#';
         if (!rawMessage.startsWith(prefix)) return;
 
         // 解析命令参数

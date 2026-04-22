@@ -144,7 +144,7 @@ export async function handleJryq(
 ): Promise<void> {
     const userId = event.user_id;
     const rawMessage = event.raw_message || '';
-    const prefix = pluginState.config.commandPrefix || '#';
+    const prefix = pluginState.config.commandPrefix ?? '#';
 
     // 开后门: #开后门 <QQ号>
     if (rawMessage.startsWith(`${prefix}开后门`)) {
@@ -246,7 +246,7 @@ async function handleBackdoorOn(
         return;
     }
 
-    const prefix = pluginState.config.commandPrefix || '#';
+    const prefix = pluginState.config.commandPrefix ?? '#';
     const targetQQ = rawMessage.replace(`${prefix}开后门`, '').trim();
 
     if (!targetQQ) {
@@ -278,7 +278,7 @@ async function handleBackdoorOff(
         return;
     }
 
-    const prefix = pluginState.config.commandPrefix || '#';
+    const prefix = pluginState.config.commandPrefix ?? '#';
     const targetQQ = rawMessage.replace(`${prefix}关后门`, '').trim();
 
     if (!targetQQ) {

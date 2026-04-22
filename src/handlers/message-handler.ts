@@ -212,7 +212,7 @@ export async function handleMessage(ctx: NapCatPluginContext, event: OB11Message
         const subCommand = args[0]?.toLowerCase() || '';
 
         // 今日运气命令（不带前缀直接触发的关键词）
-        const jryqKeywords = ['今日运气', 'jryq', 'jryq重来', '重新运气'];
+        const jryqKeywords = ['今日运气', 'jryq', 'jryq重来', '重新运气', '开后门', '关后门'];
         if (jryqKeywords.some(kw => subCommand === kw || subCommand.startsWith(kw))) {
             await handleJryq(ctx, event, args);
             return;

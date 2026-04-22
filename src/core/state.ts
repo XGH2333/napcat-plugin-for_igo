@@ -35,6 +35,7 @@ function sanitizeConfig(raw: unknown): PluginConfig {
     if (typeof raw.debug === 'boolean') out.debug = raw.debug;
     if (typeof raw.commandPrefix === 'string') out.commandPrefix = raw.commandPrefix;
     if (typeof raw.cooldownSeconds === 'number') out.cooldownSeconds = raw.cooldownSeconds;
+    if (typeof raw.masterQQ === 'string') out.masterQQ = raw.masterQQ;
 
     // 群配置清洗
     if (isObject(raw.groupConfigs)) {

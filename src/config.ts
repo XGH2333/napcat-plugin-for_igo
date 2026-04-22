@@ -12,8 +12,8 @@ export const DEFAULT_CONFIG: PluginConfig = {
     debug: false,
     commandPrefix: '#',
     cooldownSeconds: 60,
+    masterQQ: '',
     groupConfigs: {},
-    // TODO: 在这里添加你的默认配置值
 };
 
 /**
@@ -45,7 +45,8 @@ export function buildConfigSchema(ctx: NapCatPluginContext): PluginConfigSchema 
         // 命令前缀
         ctx.NapCatConfig.text('commandPrefix', '命令前缀', '#', '触发命令的前缀，默认为 #'),
         // 冷却时间
-        ctx.NapCatConfig.number('cooldownSeconds', '冷却时间（秒）', 60, '同一命令请求冷却时间，0 表示不限制')
-        // TODO: 在这里添加你的配置项
+        ctx.NapCatConfig.number('cooldownSeconds', '冷却时间（秒）', 60, '同一命令请求冷却时间，0 表示不限制'),
+        // 主人QQ号
+        ctx.NapCatConfig.text('masterQQ', '主人QQ号', '', '拥有管理权限的QQ号，用于开后门等命令')
     );
 }

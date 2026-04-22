@@ -22,9 +22,10 @@ export interface PluginConfig {
     commandPrefix: string;
     /** 同一命令请求冷却时间（秒），0 表示不限制 */
     cooldownSeconds: number;
+    /** 主人QQ号（用于开后门等管理命令） */
+    masterQQ: string;
     /** 按群的单独配置 */
     groupConfigs: Record<string, GroupConfig>;
-    // TODO: 在这里添加你的插件配置项
 }
 
 /**

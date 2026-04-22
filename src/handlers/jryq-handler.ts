@@ -97,16 +97,21 @@ function buildLuckMessage(userId: number | string, num: number): OB11PostSendMsg
 
     if (num >= 0 && num < 40) {
         text = `\n今日你的运气为${num}点,不要灰心,相信自己,明天会变得更差！`;
+        const url = pluginState.config.imageLow;
+        if (url) imageUrls.push(url);
     } else if (num >= 40 && num < 80) {
         text = `\n今日你的运气为${num}点,人品还行噢,可以安全出门啦！`;
-        imageUrls.push('https://api.mtyqx.cn/tapi/random.php');
+        const url = pluginState.config.imageMid;
+        if (url) imageUrls.push(url);
     } else if (num >= 80 && num < 100) {
         text = `\n今日你的运气为${num}点,建议去买彩票噢！`;
-        imageUrls.push('https://t.alcy.cc/ycy');
+        const url = pluginState.config.imageHigh;
+        if (url) imageUrls.push(url);
     } else {
         // num === 100
         text = `\n今日你的运气为${num}点,你今天就是天选之人！！`;
-        imageUrls.push('https://api.seaya.link/web?type=file');
+        const url = pluginState.config.imageMax;
+        if (url) imageUrls.push(url);
     }
 
     const segments: OB11PostSendMsg['message'] = [

@@ -13,6 +13,10 @@ export const DEFAULT_CONFIG: PluginConfig = {
     commandPrefix: '#',
     cooldownSeconds: 60,
     masterQQ: '',
+    imageLow: '',
+    imageMid: 'https://api.mtyqx.cn/tapi/random.php',
+    imageHigh: 'https://t.alcy.cc/ycy',
+    imageMax: 'https://api.seaya.link/web?type=file',
     groupConfigs: {},
 };
 
@@ -47,6 +51,12 @@ export function buildConfigSchema(ctx: NapCatPluginContext): PluginConfigSchema 
         // 冷却时间
         ctx.NapCatConfig.number('cooldownSeconds', '冷却时间（秒）', 60, '同一命令请求冷却时间，0 表示不限制'),
         // 主人QQ号
-        ctx.NapCatConfig.text('masterQQ', '主人QQ号', '', '拥有管理权限的QQ号，用于开后门等命令')
+        ctx.NapCatConfig.text('masterQQ', '主人QQ号', '', '拥有管理权限的QQ号，用于开后门等命令'),
+        // 图片API配置
+        ctx.NapCatConfig.html(`<h4 style="margin: 16px 0 8px 0; color: #666;">图片API配置（留空则不发送图片）</h4>`),
+        ctx.NapCatConfig.text('imageLow', '运气差 (0-39) 图片API', '', '运气值 0-39 时附带的随机图片URL，默认不附图'),
+        ctx.NapCatConfig.text('imageMid', '运气一般 (40-79) 图片API', 'https://api.mtyqx.cn/tapi/random.php', '运气值 40-79 时附带的随机图片URL'),
+        ctx.NapCatConfig.text('imageHigh', '运气好 (80-99) 图片API', 'https://t.alcy.cc/ycy', '运气值 80-99 时附带的随机图片URL'),
+        ctx.NapCatConfig.text('imageMax', '天选之人 (100) 图片API', 'https://api.seaya.link/web?type=file', '运气值 100 时附带的随机图片URL')
     );
 }

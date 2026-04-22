@@ -24,6 +24,14 @@ export interface PluginConfig {
     cooldownSeconds: number;
     /** 主人QQ号（用于开后门等管理命令） */
     masterQQ: string;
+    /** 运气值 0-39 档图片API */
+    imageLow: string;
+    /** 运气值 40-79 档图片API */
+    imageMid: string;
+    /** 运气值 80-99 档图片API */
+    imageHigh: string;
+    /** 运气值 100 档图片API */
+    imageMax: string;
     /** 按群的单独配置 */
     groupConfigs: Record<string, GroupConfig>;
 }

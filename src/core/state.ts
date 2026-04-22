@@ -36,6 +36,10 @@ function sanitizeConfig(raw: unknown): PluginConfig {
     if (typeof raw.commandPrefix === 'string') out.commandPrefix = raw.commandPrefix;
     if (typeof raw.cooldownSeconds === 'number') out.cooldownSeconds = raw.cooldownSeconds;
     if (typeof raw.masterQQ === 'string') out.masterQQ = raw.masterQQ;
+    if (typeof raw.imageLow === 'string') out.imageLow = raw.imageLow;
+    if (typeof raw.imageMid === 'string') out.imageMid = raw.imageMid;
+    if (typeof raw.imageHigh === 'string') out.imageHigh = raw.imageHigh;
+    if (typeof raw.imageMax === 'string') out.imageMax = raw.imageMax;
 
     // 群配置清洗
     if (isObject(raw.groupConfigs)) {

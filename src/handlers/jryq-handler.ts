@@ -160,7 +160,7 @@ export async function handleJryq(
 
     // 重新运气
     const subCmd = (args[0] || '').toLowerCase();
-    if (subCmd === 'V你50再给我一次机会' || subCmd === '重新运气') {
+    if (subCmd === 'v你50再给我一次机会' || subCmd === '重新运气') {
         await handleJryqReset(ctx, event);
         return;
     }

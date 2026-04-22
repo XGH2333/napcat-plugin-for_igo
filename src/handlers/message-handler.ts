@@ -13,6 +13,7 @@
 import type { OB11Message, OB11PostSendMsg } from 'napcat-types/napcat-onebot';
 import type { NapCatPluginContext } from 'napcat-types/napcat-onebot/network/plugin/types';
 import { pluginState } from '../core/state';
+import { handleJryq, getJryqHelp } from './jryq-handler';
 
 // ==================== CD 冷却管理 ====================
 
@@ -210,6 +211,13 @@ export async function handleMessage(ctx: NapCatPluginContext, event: OB11Message
         const args = rawMessage.slice(prefix.length).trim().split(/\s+/);
         const subCommand = args[0]?.toLowerCase() || '';
 
+        // 今日运气命令（不带前缀直接触发的关键词）
+        const jryqKeywords = ['今日运气', 'jryq', 'jryq重来', '重新运气'];
+        if (jryqKeywords.some(kw => subCommand === kw || subCommand.startsWith(kw))) {
+            await handleJryq(ctx, event, args);
+            return;
+        }
+
         // TODO: 在这里实现你的命令处理逻辑
         switch (subCommand) {
             case 'help': {
@@ -218,6 +226,7 @@ export async function handleMessage(ctx: NapCatPluginContext, event: OB11Message
                     `${prefix} help - 显示帮助信息`,
                     `${prefix} ping - 测试连通性`,
                     `${prefix} status - 查看运行状态`,
+                    ...getJryqHelp(prefix),
                 ].join('\n');
                 await sendReply(ctx, event, helpText);
                 break;

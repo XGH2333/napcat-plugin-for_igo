@@ -1,21 +1,22 @@
 {
-  "name": "napcat-plugin-template",
-  "plugin": "插件模板",
+  "name": "napcat-plugin-for-igo",
+  "plugin": "今日运气",
   "version": "1.0.0",
   "type": "module",
   "main": "index.mjs",
-  "description": "NapCat 插件开发模板 - 快速开始你的插件开发",
-  "author": "Your Name",
+  "description": "NapCat 今日运气插件 - 每天获取随机运气值",
+  "author": "XGH2333",
   "license": "MIT",
   "keywords": [
     "napcat",
     "plugin",
     "qq",
-    "template"
+    "今日运气",
+    "luck"
   ],
   "napcat": {
     "tags": [
-      "工具"
+      "娱乐"
     ],
     "minVersion": "4.14.0",
     "homepage": ""
